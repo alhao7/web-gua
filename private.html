@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE YOU</title>
+    
+  </head>
+  <body class="private-page">
+   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+    
+    <section id="my-secret" class="my-secret">
+    <h2>I<span> LOVE</span> YOU</h2>
+    
+    <button class="btn-musik" onclick="playMusic()">▶ Play Musik</button>
+    <p>tekan 2 kali untuk menganti musik</p>
+
+  <audio id="lagu"></audio>
+
+<script>
+let songs = [
+  "best.mp3",
+  "you.mp3",
+  "love you.mp3",
+  "me.mp3",
+  "my.mp3"
+];
+
+let index = 0;
+let audio = document.getElementById("lagu");
+
+function playMusic() {
+  audio.src = songs[index];
+  audio.play();
+}
+
+// kalau lagu selesai → lanjut berikutnya
+audio.addEventListener("ended", function () {
+  index++;
+  if (index >= songs.length) {
+    index = 0; // ulang dari awal
+  }
+  audio.src = songs[index];
+  audio.play();
+});
+</script>
+   <!-- <p>berak nasi uduk campur lalapan</p>-->
+    
+<div class="collage">
+  <img src="img1.jpg" class="img i1">
+  <img src="img2.jpg" class="img i2">
+  <img src="img3.jpg" class="img i3">
+  <img src="img4.jpg" class="img i4">
+  <img src="img5.jpg" class="img i5">
+</div>
+
+<div class="text-bawah">
+<p>akuuu mintaa maaff yahh, syaa udh maulai ga tau harus apapapa lgii cuma bisa minta maaaff sama kecerobhanku malam itu, udh ga ada motivasi buat memper bagus web ini terutama di web pribadiku, yg hanys bisa di akses sama kmu soalnya passwordnya kmu tau, dan ini juga biar kmu bisa meliht saya senegitunga merasa bersalah, inhin minta maaaf<span>(pengn juga balikan)</span></p>
+
+<p>intinya aku ingin kmu memaaffkan syaa <span> GIVE me one LAST CHANCE</span> pasti kmu bosan sama aku yg sering ulngi ulnggi kata kesempatan terakhir, plisss, maaff kalau permintaan maaffku ga sesuai kemauanmu yahh, , aku udh 2hari pikitin kata katanya, ILOOVEEEYOUUU</p>
+<p><span>PLISSS MAU YAH BALIKAN SAMA AKUU, AKUUU MOHONNN BMGATTT</span></p>
+
+
+<p>sebernya webnya masih aku mau lnjtin tapi udh ga aada semngat, motivasi, jukur aku buat web begini karena ingin membuat kmu terkesan dan muji akuu, ketika aku berhasil dan gagal kmu selalu semngatin dan janhn menyerah</p>
+<p>tapi sekrng udj ga ada jadi udh malas lnutin karena udh ga tau hrus di apain lagi web ini (plisss mau ga kita baliakn dan mulai ulang sama²)
+itu aja. love youy</p>
+</div>
+ </section>
+ 
+ <button onclick="kembali()">Kembali ke Beranda</button>
+
+<script>
+function kembali() {
+  window.location.href = "menu.html"; // atau index.html
+}
+</script>
+ 
+ <script>
+let akses = sessionStorage.getItem("akses");
+
+if (akses !== "true") {
+  let pass = prompt("Masukkan password:");
+
+  if (pass === "selmicanti") {
+    sessionStorage.setItem("akses", "true");
+  } else {
+    window.location.href = "menu.html";
+  }
+}
+</script>
+ 
+    <script src="script.js" defer></script>
+  </body>
+</html>
